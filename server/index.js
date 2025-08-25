@@ -63,7 +63,7 @@ app.post('/api/url/shorten', async (req, res) => {
 // @desc    Redirect to original URL
 app.get('/:shortcode', async (req, res) => {
   try {
-    const url = await Url.findOne({ urlCode: req.params.code });
+    const url = await Url.findOne({ urlCode: req.params.shortcode });
 
     if (url) {
       // Increment click count
